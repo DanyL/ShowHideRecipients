@@ -9,10 +9,11 @@ static BOOL isRecipientListView;
 	%orig;
 	
 	UITapGestureRecognizer *tapGestureRecognizer =  [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleRecipientListView)];
-	
 	[tapGestureRecognizer setNumberOfTapsRequired:2];
 	[tapGestureRecognizer setNumberOfTouchesRequired:1];
 	[self.view addGestureRecognizer:tapGestureRecognizer];
+	[tapGestureRecognizer release];
+	tapGestureRecognizer = nil;
 }
 
 %new
